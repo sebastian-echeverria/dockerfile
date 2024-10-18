@@ -77,3 +77,20 @@ go get github.com/asottile/dockerfile
 ### Usage
 
 [godoc](https://godoc.org/github.com/asottile/dockerfile)
+
+
+## Working from source
+
+### Env setup
+
+1. Prepare environment: `python -m venv .venv`
+1. Activate environment: `source .venv/bin/activate`
+1. Install python deps: `pip install -r requirements-dev.txt`
+
+### Building and installing
+
+1. Install go
+1. Get go dependencies: `go mod tidy`
+1. Build with go: `go build`
+1. Build Python wheel: `python setup.py bdist_wheel`
+1. Install wheel in local env: `pip install dist/dockerfile-3.3.1-cp39-abi3-macosx_14_0_arm64.whl`
