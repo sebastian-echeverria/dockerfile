@@ -94,3 +94,5 @@ go get github.com/asottile/dockerfile
 1. Build with go: `go build`
 1. Build Python wheel: `python setup.py bdist_wheel`
 1. Install wheel in local env: `pip install dist/dockerfile-3.3.1-cp39-abi3-macosx_14_0_arm64.whl`
+
+You can also test the whole process by calling `tox`.
