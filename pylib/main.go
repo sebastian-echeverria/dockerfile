@@ -88,7 +88,7 @@ func heredocsToPy(heredocs []dockerfile.Heredoc) *C.PyObject {
 
 		pyFileDescriptor := C.PyLong_FromLong(C.long(heredoc.FileDescriptor))
 
-		pyContent := stringToPyOrNone(heredoc.Content)
+		pyContent := stringToPy(heredoc.Content)
 		if pyContent == nil {
 			decrefAll()
 			return nil
@@ -125,7 +125,6 @@ func cmdsToPy(cmds []dockerfile.Command) *C.PyObject {
 		C.Py_DecRef(pyValue)
 		C.Py_DecRef(pyHeredocs)
 		C.Py_DecRef(ret)
-
 	}
 
 	ret = C.PyTuple_New(C.Py_ssize_t(len(cmds)))
