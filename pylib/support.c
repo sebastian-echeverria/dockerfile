@@ -70,9 +70,7 @@ static PyObject* _setup_module(PyObject* module) {
         PyObject* collections = PyImport_ImportModule("collections");
 
         // Set up a Command namedtuple object, with empty default for heredocs substructure.
-        PyObject* defaults = PyTuple_New(1);
-        PyObject* default_heredoc = PyTuple_New(0);
-        PyTuple_SetItem(defaults, 0, default_heredoc);
+        PyObject* defaults = Py_BuildValue("(())");
         PyObject *args = Py_BuildValue("ss", "Command",  "cmd sub_cmd json original start_line end_line flags value heredocs");
         PyObject *keywords = PyDict_New();
         PyDict_SetItemString(keywords, "defaults", defaults);
