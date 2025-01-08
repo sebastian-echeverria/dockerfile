@@ -77,3 +77,30 @@ go get github.com/asottile/dockerfile
 ### Usage
 
 [godoc](https://godoc.org/github.com/asottile/dockerfile)
+
+
+## Building from source
+
+### Setup
+1. Install go
+1. Get go dependencies: `go get -v -t ./...`
+1. Create python environment: `python -m venv .venv`
+1. Activate python environment: `source .venv/bin/activate`
+1. Install python deps: `pip install -r requirements-dev.txt`
+1. Install python wheel dep: `pip install wheel`
+1. Install tox: `pip install tox`
+
+### Building
+1. Build with go: `go build`
+1. Build python wheel (in activated environment): `python setup.py bdist_wheel`
+
+### Installing
+1. Install wheel in current env: `pip install dist/dockerfile-*.whl`
+
+## Testing
+
+Go tests:
+1. Run `go test .`
+
+Python tests:
+1. Run `tox`
